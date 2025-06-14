@@ -4,16 +4,19 @@
 Due to the nature of this "fix" you need to reapply it every time pob updates since when this is installed it thinks there's always an update due to mismatched files
 
 ## DPI-Fix Installation
-# Method 1 (Recommended for normal people)
+# Manual Method (Recommended for normal people)
 - download [SimpleGraphicDLLs-x64-windows.tar](https://github.com/Ricky12Awesome/PathOfBuilding-SimpleGraphic/releases/latest/download/SimpleGraphicDLLs-x64-windows.tar) from latest release
 - right click and extraxt all (leave path as default and have "Show extracted files when complete" ticked on)
-- move all of those files into `%APPDATA%\Path of Building Community` (copy pasted into a new tab/window in explorer, shortcut for `C:\Users\<username>\AppData\Roaming\Path of Building Community`)
+- copy files (replace all when prompted) into `%APPDATA%\Path of Building Community` (copy pasted into a new tab/window in explorer, shortcut for `C:\Users\<username>\AppData\Roaming\Path of Building Community`)
+- open `SimpleGraphic` and edit `SimpleGraphic.cfg` and add/change `set vid_dpiScale "0"` with `0` being the dpi value, this is added by default if its not present (you can also paste in `%APPDATA%\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg` like before and it should open it with default app associated with .cfg, aks if their isn't one)
 
-# Method 2 (Recommended for nerds)
-Open terminal in powershell and paste
+# Automatic Method (Recommended for nerds)
+- Open terminal in powershell and paste
 ```powershell
-Start-BitsTransfer -Source "https://github.com/Ricky12Awesome/PathOfBuilding-SimpleGraphic/releases/latest/download/SimpleGraphicDLLs-x64-windows.tar" -Destination "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar"; tar -xkf "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar" -C "$env:APPDATA\Path of Building Community"
+Start-BitsTransfer -Source "https://github.com/Ricky12Awesome/PathOfBuilding-SimpleGraphic/releases/latest/download/SimpleGraphicDLLs-x64-windows.tar" -Destination "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar"; tar -xkf "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar" -C "$env:APPDATA\Path of Building Community"; Invoke-Item "$env:APPDATA\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg"
 ```
+- edit `%APPDATA%\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg` and add/change `set vid_dpiScale "0"` with `0` being the dpi value
+
 
 ## Introduction
 

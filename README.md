@@ -13,7 +13,7 @@ Due to the nature of this "fix" you need to reapply it every time pob updates si
 # Automatic Method (Recommended for nerds)
 - Open terminal in powershell and paste
 ```powershell
-Start-BitsTransfer -Source "https://github.com/Ricky12Awesome/PathOfBuilding-SimpleGraphic/releases/latest/download/SimpleGraphicDLLs-x64-windows.tar" -Destination "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar"; tar -xkf "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar" -C "$env:APPDATA\Path of Building Community"; Invoke-Item "$env:APPDATA\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg"
+Start-BitsTransfer -Source "https://github.com/Ricky12Awesome/PathOfBuilding-SimpleGraphic/releases/latest/download/SimpleGraphicDLLs-x64-windows.tar" -Destination "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar"; tar -xf "$env:APPDATA\Path of Building Community\SimpleGraphicDLLs-x64-windows.tar" -C "$env:APPDATA\Path of Building Community"; Invoke-Item "$env:APPDATA\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg"
 ```
 - edit `%APPDATA%\Path of Building Community\SimpleGraphic\SimpleGraphic.cfg` and add/change `set vid_dpiScale "0"` with `0` being the dpi value
 
